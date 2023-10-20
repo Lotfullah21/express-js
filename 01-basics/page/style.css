@@ -1,0 +1,11 @@
+h1 {
+  font-size: 5rem;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+}
+
+body {
+  background: gray;
+  text-align: center;
+  padding: 4rem;
+}
