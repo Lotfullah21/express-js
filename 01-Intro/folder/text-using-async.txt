@@ -1,0 +1,1 @@
+Contents added using promises Hello from first file Hello from second fileContents added using promises Hello from first file Hello from second file
