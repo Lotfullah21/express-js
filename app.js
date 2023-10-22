@@ -1,31 +1,32 @@
-<<<<<<< HEAD
-const { URL } = require("url");
-const webAddress =
-  "http://localhost:4000/home.html?name=Ahmad&country=Palestine&status=student";
-// generating a new url based on URL class so that we can have a structured url to parse,This class is used to work with URLs, parse them, and access their components.
-// create a new URL object to represent and work with the URL defined in the webAddress string.
-const newUrlToParse = new URL(webAddress);
-// we can use searchParams method to have access to the query parameters in a URL, The object will now allow you to access different components of the URL, including query parameters.
-const queryData = newUrlToParse.searchParams;
-console.log(queryData);
-// using get method to have access to each
-console.log(queryData.get("name"));
-console.log(queryData.get("country"));
-=======
-// const num = 0;
+const express = require("express");
+const app = express();
+const morgan = require("morgan");
+const { colleges } = require("./data");
+// we can use more than one middleware in our application.
 
-// if (num > 1) {
-//   console.log("num greater");
-// } else {
-//   console.log("num smaller");
-// }
-const http = require("http");
-const fs = require("fs");
+app.use(express.static("./public-methods"));
+// it  parses URL-encoded data from incoming HTTP requests.
+app.use(express.urlencoded({ extended: false }));
 
-http
-  .createServer(function (req, res) {
-    const text = fs.readFileSync("../01-Intro/folder/bigFile.txt", "utf8");
-    res.end(text);
-  })
-  .listen(5000);
->>>>>>> 7bf887cd3475260cfe1a819bcf46eafb7c80d6d6
+app.get("", (req, res) => {
+  res.send("<h1>HOME<h1>");
+});
+app.get("/api/colleges", (req, res) => {
+  res.status(200).json({ success: true, data: colleges });
+});
+
+// Posting data to this route.
+app.post("/login", (req, res) => {
+  console.log(req.body);
+  // name is the property we got from input and it acts as a key to the data we are sending.
+  const name = req.body.name;
+  if (name) {
+    return res.status(200).send(`${name} data had been submitted`);
+  } else {
+    res.status(403).send("unauthorized");
+  }
+});
+
+app.listen(4000, () => {
+  console.log("LISTENING");
+});

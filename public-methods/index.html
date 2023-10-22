@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css"></link>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-center">
+        <h3>Form submission</h3>
+        <div>
+          <a href="index.html">html</a>
+          <a href="index.js">javascript</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <form action="/login" method="POST">
+        <h3>form for post</h3>
+        <div class="form">
+            <label for="name"></label>
+            <!-- name will be the key that will be sent with request body, and the value will be the value we are posting in form. -->
+            <input type="text" name="name" id="name" autocomplete="false"></d>
+        </div>
+        <button type="submit" class="btn">submit</button>
+      </form>
+    </main>
+  </body>
+</html>
