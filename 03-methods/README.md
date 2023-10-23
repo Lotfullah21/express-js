@@ -37,7 +37,6 @@ the above third party package gives more info about or request, like the time, m
 app.use(express.urlencoded({ extended: false }));
 ```
 
-: This is a middleware function provided by the Express.js framework. It is used for parsing data that is sent to the server from an HTML form using the application/x-www-form-urlencoded content type. This is a common way to send data from an HTML form.{ extended: false }: The express.urlencoded() middleware accepts an optional configuration object as an argument. In this case, extended is set to false. When extended is set to false, it uses the QueryString library to parse the data, which results in a nested object with more predictable behavior
+: This is a middleware function provided by the Express.js framework. It is used for parsing data that is sent to the server from an HTML form using the application/x-www-form-urlencoded content type. This is a common way to send data from an HTML form.{ extended: false }: The express.urlencoded() middleware accepts an optional configuration object as an argument. In this case, extended is set to false. When extended is set to false, it uses the querystring library to parse the data, which results in a nested object with more predictable behavior
 The app.use() method is used to mount the express.urlencoded() middleware globally, which means it will be executed for all incoming HTTP requests to your Express application. This middleware is responsible for parsing URL-encoded data from the request's body.
-
 When you "mount" a middleware function, you are essentially adding it to the request processing pipeline, and it will be executed in the order it is mounted.
