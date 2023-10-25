@@ -1,10 +1,8 @@
 const express = require("express");
 const app = express();
-const middle = require("./middleWareFn");
-const bestUser = require("./bestUser");
 const morgan = require("morgan");
-// we can use more than one middleware in our application.
 
+// application is using the morgan middleware to log HTTP request information in a "tiny" format.
 app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
