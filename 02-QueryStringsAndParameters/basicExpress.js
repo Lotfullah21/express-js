@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.status(200).send("ABOUT PAGE");
 });
-
+// if the provided path is not the above mentioned path, give the 404 response
 app.get("*", (req, res) => {
   res.status(404).send("<h1>PAGE NOT FOUND</h1>");
 });
