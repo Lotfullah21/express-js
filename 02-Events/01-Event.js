@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
   res.end("HOME");
 });
 
-// server.listen is an event loop, we stay there and listen for any callback to happen, if happened respond.
+// app.listen() is not an event itself, but it is a method used in web applications to set up an event listener for a specific event. liek req, if any request comes, respond to it.
 server.listen(4000, () => {
   console.log("Hello World");
 });
